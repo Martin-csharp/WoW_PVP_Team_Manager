@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="WoW_PVP_Team_Manager.Views.Results"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WoW_PVP_Team_Manager.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FF272625" Width="1216" Height="684"
+    RequestedTheme="Dark"
+    NavigationCacheMode="Required">
+
+    <Grid>
+        <Grid BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,116,816,10">
+            <ListBox x:Name="ListBox_LogList" Margin="-1,35,-1,-1" BorderBrush="Black" BorderThickness="1" Background="#FF272625" SelectionChanged="ListBox_LogList_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Title}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Height="25" FontWeight="Bold" Text="Select a log to view"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tournament History" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Height="24" FocusVisualPrimaryBrush="#FFFFFFFE" Foreground="#FFFBFBFB"><Run Text="Here you can see the results of previously played tournaments."/><LineBreak/></TextBlock>
+        <Grid BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="808,116,10,10">
+            <ListBox x:Name="ListBox_TeamB" Margin="-1,35,-1,-1" BorderBrush="Black" BorderThickness="1" Background="#FF272625"/>
+            <TextBlock x:Name="Txt_TeamB" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Height="25" FontWeight="Bold" Text="Team B"/>
+        </Grid>
+        <Grid BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="405,116,413,10">
+            <ListBox x:Name="ListBox_TeamA" Margin="-1,35,-1,-1" BorderBrush="Black" BorderThickness="1" Background="#FF272625"/>
+            <TextBlock x:Name="Txt_TeamA" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Height="25" FontWeight="Bold" Text="Team A"/>
+        </Grid>
+        <Button Content="Clear logs" Margin="1123,10,0,0" VerticalAlignment="Top" CornerRadius="8" Width="83" Click="Button_Click"/>
+    </Grid>
+</Page>
